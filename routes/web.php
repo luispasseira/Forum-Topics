@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::resource('/topics', 'TopicController')->middleware('auth');
 Route::resource('/answers', 'AnswerController')->middleware('auth');
+
 Route::get('/answers/create/{id}', 'AnswerController@create')->middleware('auth');
