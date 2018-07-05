@@ -22,20 +22,23 @@
             <tr>
                 <td><a href="/topics/{{ $topic->id }}">{{ $topic->title }}</a></td>
                 <td>
-                @switch($topic->state)
+                    @switch($topic->state)
 
-                    @case(true)
-                    Aberto
-                    @break
-                    @case(false)
-                    Fechado
-                    @break
-                    @default
-                    Desconhecido
-                @endswitch
+                        @case(true)
+                        Aberto
+                        @break
+                        @case(false)
+                        Fechado
+                        @break
+                        @default
+                        Desconhecido
+                    @endswitch
                 </td>
             </tr>
         @endforeach
         </tbody>
+        <tfoot>
+        {{ $topics->links() }}
+        </tfoot>
     </table>
 @endsection
